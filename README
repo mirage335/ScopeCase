@@ -1,0 +1,53 @@
+Copyright (C) 2015 mirage335
+See the end of the file for license conditions.
+See license.txt for ScopeCase license conditions.
+
+mirage335-site.dyndns.org
+
+Enhanced enclosure for DSO Nano pocket oscilloscope. Facillitates BNC connectors, high-speed impedance tester (decade resistor), high-speed high-versatility diode tester, amplifier high-gain mode, high-speed multi-gigahertz envelope detector, and a larger battery.
+
+__DecadeResistor__
+See "Electronics/ResistanceProbeSchematic.png" subfolder for correct implementation of a decade resistor as an impedance tester and diode tester.
+
+For diode testing, simply select a known resistance providing adequate current (often 1k-10k), and measure the voltage drop. Especially helpful for testing LEDs.
+
+Impedance can be measured by the following equation. The high-speed offered by the onboard oscilloscope and variable frequency signal generator makes this applicable to inductors, capacitors, transformers, and even transistor/phototransistor/optoisolator outputs.
+
+RT=(o*RK)/(i-o)
+x is the unknown resistance
+r is the known resistance (selected by switches)
+o is the output voltage (load voltage)
+i is the input voltage supplied through power pins (next to switches, normally connected to button-cell battery) 
+
+__FieldStrengthProbe__
+See "Electronics/FieldStrengthProbeSchematic.png" for the envelope detector.
+
+Essentially a crystal radio without any resonant filter, this allows the low-frequency (~100kHz bandwidth) DSO Nano oscilloscope to 'see' multi-gigahertz signals. Even more interesting is the possibility to see timing patterns. Interesting experiments include placing an antenna close to microwave ovens and WiFi accesspoints. Beacon frames are clearly visible in the latter case.
+
+__HighGainMode__
+Bypass R13 on the DSO Nano PCB with a lower-value resistor to increase gain when desired.
+
+__FutureWork__
+Simple IIR biquad filters would be useful for rejecting unwanted noise (ie. 60Hz).
+
+__Credit__
+Thanks to SeedStudio for an excellent pocket oscilloscope, and "BenF" for improved firmware.
+
+http://www.seeedstudio.com/depot/DSO-Nano-v3-p-1358.html
+http://www.seeedstudio.com/forum/viewtopic.php?f=22&t=1793
+
+__Copyright__
+This file is part of ScopeCase.
+
+ScopeCase is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ScopeCase is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with ScopeCase.  If not, see <http://www.gnu.org/licenses/>.
